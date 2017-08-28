@@ -1,0 +1,4 @@
+<template name="contact">
+  <view class="contact tac">客服</view>
+  <contact-button class="contact opcity" type="default-light" size="20" session-from="weapp"></contact-button>
+</template>

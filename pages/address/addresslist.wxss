@@ -1,0 +1,70 @@
+/* pages/address/addresslist.wxss */
+page {
+  background: #dedede;
+  padding-bottom: 72px;
+}
+
+.address_item {
+  padding: 26rpx 34rpx;
+  background: #fff;
+}
+
+.fz13 {
+  font-size: 13px;
+}
+
+.address {
+  padding-top: 10px;
+  line-height: 1.7;
+}
+
+.default {
+  color: #ff4200;
+}
+
+.inf_box{
+  flex: 1;
+  padding-right: 34rpx;
+}
+
+.c999{
+  color: #999;
+}
+
+.new_address{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  background: #ef8517;
+  color: #fff;
+}
+
+@media ( min-resolution : 2dppx ) {
+  .border1px {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #dedede;
+    transform: scale(1, 0.5);
+  }
+}
+
+@media ( min-resolution : 3dppx ) {
+  .border1px {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #dedede;
+    transform: scale(1, 0.33);
+  }
+}
+
+.set_default{
+  line-height: 36px;
+  color: #999;
+}

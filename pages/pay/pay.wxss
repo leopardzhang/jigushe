@@ -1,0 +1,78 @@
+/* pages/pay/pay.wxss */
+
+page {
+  background: #dedede;
+  padding-top: 8px;
+  padding-bottom: 100px;
+}
+
+.content {
+  padding-left: 33rpx;
+  padding-right: 33rpx;
+}
+
+.block {
+  background: #fff;
+  padding: 16px 43rpx;
+  margin-bottom: 9px;
+}
+
+.arr_right {
+  width: 15rpx;
+  height: 26rpx;
+  background: url('https://xcx.longcai666.com/xiaochengxu/api/images/arr_06.jpg') no-repeat;
+  background-size: 100%;
+}
+
+.address_info_box {
+  font-size: 12px;
+  line-height: 20px;
+  width: 16em;
+  flex: 0 0 16em;
+}
+
+.title.blod {
+  font-size: 15px;
+}
+
+.order_inf_box {
+  line-height: 2;
+}
+
+.order_img {
+  width: 96rpx;
+  height: 96rpx;
+}
+
+.order_img image {
+  width: 96rpx;
+  height: 96rpx;
+}
+
+.price_num {
+  text-align: right;
+}
+
+.price_num .price {
+  color: #ef831b;
+}
+
+.total {
+  font-size: 15px;
+}
+
+.pay_btn{
+  padding: 0 55rpx;
+}
+.pay{
+  border-radius: 0;
+  background: #ef8517;
+  color: #fff;
+}
+.fixed_box{
+  position: fixed;
+  width: 100%;
+  height: 79px;
+  left: 0;
+  bottom: 0;
+}

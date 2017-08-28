@@ -1,0 +1,72 @@
+<!--index.wxml-->
+<import src="/components/contact/contact.wxml" />
+<import src="/components/loading/loading.wxml" />
+<view class="main">
+  <view class="nav_bar flex around">
+    <block wx:for="{{navBar}}" wx:key="key">
+      <view class="nav blod tac {{classIndex == item.id ? 'active' : ''}}" data-id="{{item.id}}" bindtap="choseClass">
+        <text>{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="index_list">
+    <swiper class="index_wheel abs" indicator-dots="{{banner.indicatorDots}}" autoplay="{{banner.autoplay}}" duration="{{banner.duration}}" current="{{classIndex}}" bindchange="banner_swiper">
+      <swiper-item>
+        <scroll-view class="scroll_view abs" scroll-y="{{scrollAble}}">
+          <view class="recommend_list flex wrap">
+            <block wx:for="{{recommends}}" wx:key="id">
+              <view class="li" data-id="{{item.id}}">
+                <navigator url="/pages/product/productlist?id={{item.id}}&page={{item.text}}">
+                  <view class="flex center aic bg" style="background: url({{item.img}}) no-repeat center center; background-size: cover">
+                    <text>{{item.text}}</text>
+                  </view>
+                </navigator>
+              </view>
+            </block>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view class="scroll_view abs" scroll-y="{{scrollAble}}">
+          <view class="classes_list">
+            <block wx:for="{{classes}}" wx:key="id">
+              <view class="li" data-id="{{item.id}}">
+                <navigator url="/pages/product/productlist?id={{item.id}}&page={{item.text}}">
+                  <view class="flex center aic bg" style="background: url({{item.img}}) no-repeat center center; background-size: cover">
+                    <text>{{item.text}}</text>
+                  </view>
+                </navigator>
+              </view>
+            </block>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view class="scroll_view abs" scroll-y="{{scrollAble}}">
+          <view class="content">
+            <view class="brands_box">
+              <block wx:for="{{brands}}" wx:for-item="brands" wx:key="firstLetter">
+                <view class="first_letter" wx:if="{{brands.list.length !=0}}">
+                  <view class="content">
+                    <text>{{brands.firstLetter}}</text>
+                  </view>
+                </view>
+                <view class="brands_list">
+                  <block wx:for="{{brands.list}}" wx:key="id">
+                    <view class="brand" data-id="{{item.id}}">
+                      <navigator url="/pages/product/productlist?id={{item.id}}&page={{item.text}}">
+                        <view class="content">{{item.text}} </view>
+                      </navigator>
+                    </view>
+                  </block>
+                </view>
+              </block>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+<template is="contact" />
+<template is="loading" data="{{loading: loading}}" />

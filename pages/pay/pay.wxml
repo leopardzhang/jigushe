@@ -1,0 +1,45 @@
+<!--pages/pay/pay.wxml-->
+<import src="/components/contact/contact.wxml" />
+<import src="/components/order/orderlist.wxml" />
+<import src="/components/address/address.wxml" />
+<view class="main">
+  <view class="content">
+    <template is="address" data="{{address: address}}"></template>
+    <template is="orderlist" data="{{shopList: shopList}}"></template>
+    <!-- <block wx:for="{{shopList}}" wx:key="picurl">
+      <view class="block">
+        <view class="order_inf_box">
+          <view class="blod label">订单信息</view>
+          <view class="store_name">{{item.title}}</view>
+          <view class="flex between">
+            <view class="order_img">
+              <image mode="widthFix" src="{{item.picurl}}" />
+            </view>
+            <view>
+              <view>{{item.title}}</view>
+              <view>{{item.attrname}}</view>
+            </view>
+            <view class="price_num">
+              <view class="price">
+                <text>￥{{item.total}}</text>
+              </view>
+              <view class="num">
+                <text>{{item.num}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block> -->
+    <view class="block total blod flex between">
+      <text>总计</text>
+      <text>￥{{totalprice}}</text>
+    </view>
+  </view>
+  <view class="fixed_box">
+    <view class="pay_btn">
+      <button class="pay" bindtap="pay">微信支付</button>
+    </view>
+  </view>
+</view>
+<template is="contact" />

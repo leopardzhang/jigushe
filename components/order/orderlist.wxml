@@ -1,0 +1,26 @@
+<template name="orderlist">
+  <block wx:for="{{shopList}}" wx:key="picurl">
+      <view class="block">
+        <view class="order_inf_box">
+          <view class="store_name">{{item.title}}</view>
+          <view class="flex between">
+            <view class="order_img">
+              <image mode="widthFix" src="{{item.picurl}}" />
+            </view>
+            <view>
+              <view>{{item.title}}</view>
+              <view>{{item.attrname}}</view>
+            </view>
+            <view class="price_num">
+              <view class="price">
+                <text>￥{{item.total}}</text>
+              </view>
+              <view class="num">
+                <text>{{item.num}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+</template>

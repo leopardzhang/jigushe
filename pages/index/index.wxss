@@ -1,0 +1,114 @@
+/**index.wxss**/
+
+.nav_bar {
+  font-size: 16px;
+  line-height: 45px;
+}
+
+.nav {
+  width: 160rpx;
+  position: relative;
+}
+
+.nav.active::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #000;
+  display: block;
+}
+
+.classes_list .li .bg {
+  width: 100%;
+  height: 264rpx;
+  color: #fff;
+  font-size: 24px;
+}
+
+.index_wheel {
+  left: 0;
+  top: 48px;
+  right: 0;
+  bottom: 0;
+}
+
+.scroll_view {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.recommend_list {
+  width: 100%;
+}
+
+.recommend_list .li .bg {
+  width: 100%;
+  height: 414rpx;
+  color: #fff;
+  font-size: 24px;
+}
+
+.recommend_list .li {
+  width: 100%;
+}
+
+.recommend_list .li:nth-last-child(2) {
+  width: 375rpx;
+  flex: 0 0 375rpx;
+}
+
+.recommend_list .li:nth-last-child(1) {
+  flex: 1;
+}
+
+/*品牌*/
+
+.content {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.brands_box {
+  margin-bottom: 15px;
+}
+
+.brands_box {
+  border: 1px solid #bcbcbc;
+}
+
+.first_letter {
+  height: 35px;
+  line-height: 35px;
+  background: #bcbcbc;
+  color: #999;
+}
+
+.brand {
+  color: #000;
+  font-size: 12px;
+  line-height: 35px;
+}
+
+@media ( min-resolution : 2dppx ) {
+  .brand::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #bcbcbc;
+    transform: scale(1, 0.5);
+  }
+}
+
+@media ( min-resolution : 3dppx ) {
+  .brand::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #bcbcbc;
+    transform: scale(1, 0.3);
+  }
+}

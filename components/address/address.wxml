@@ -1,0 +1,12 @@
+<template name="address">
+  <view class="block">
+    <view class="flex between">
+      <text class="blod label">送至</text>
+      <view class="address_info_box" wx:if="{{address}}">
+        <view>{{address.cur_address }} {{address.road_address ? address.road_address : ''}}</view>
+        <view>{{address.rec_name}} {{address.sex}} {{address.telephone}}</view>
+      </view>
+      <view class="arr_right"></view>
+    </view>
+  </view>
+</template>

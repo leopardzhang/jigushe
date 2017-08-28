@@ -1,0 +1,19 @@
+/* pages/order/orderinfo.wxss */
+@import '../pay/pay.wxss';
+
+.f1 {
+  flex: 1;
+  margin-left: 60rpx;
+}
+
+page {
+  padding-bottom: 0;
+}
+
+.main .block:last-of-type {
+  margin-bottom: 0;
+}
+
+.logistics {
+  line-height: 1.7;
+}

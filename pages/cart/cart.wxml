@@ -1,0 +1,64 @@
+<!--pages/cart/cart.wxml-->
+<import src="/components/contact/contact.wxml" />
+<view class="main">
+  <view class="content">
+    <view class="null tac" hidden="{{shopList.length > 0}}">
+      <view class="c666 fz16">购物车快饿瘪了</view>
+      <view class="c9c9c9c">快给我挑点宝贝</view>
+      <navigator class="go_to_buy" url="/pages/index/index" open-type="switchTab">去逛逛</navigator>
+    </view>
+    <view class="cart_list">
+      <block wx:for="{{shopList}}" wx:key="id">
+        <view class="li border1px">
+          <view class="flex between aic">
+            <view class="check_box" data-index="{{index}}" bindtap="checker">
+              <image src="https://xcx.longcai666.com/xiaochengxu/api/images/r.png" hidden="{{!checkList[index]}}" />
+              <image src="https://xcx.longcai666.com/xiaochengxu/api/images/s.png" hidden="{{checkList[index]}}" />
+            </view>
+            <view class="main_box flex">
+              <view class="product_img_box">
+                <image src="{{item.picurl}}" class="product_img" />
+              </view>
+              <view class="product_info flex column around">
+                <text class="product_name">{{item.title}}</text>
+                <text class="prodcut_text">{{item.attrname}}</text>
+                <view class="num_control flex aic">
+                  <text class="price">￥{{item.salesprice}}</text>
+                  <view class="num_box flex aic">
+                    <view class="btn" data-index="{{index}}" bindtap="minute">
+                      <image src="https://xcx.longcai666.com/xiaochengxu/api/images/minute.png" />
+                    </view>
+                    <input type="text" disabled value="{{item.num}}" />
+                    <view class="btn" data-index="{{index}}" bindtap="add">
+                      <image src="https://xcx.longcai666.com/xiaochengxu/api/images/plus.png" />
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="close_box" data-index="{{index}}" bindtap="remove">
+              <image src="https://xcx.longcai666.com/xiaochengxu/api/images/w.png" />
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="footer" hidden="{{shopList.length == 0}}">
+  <view class="flex aic">
+    <view class="btn_box">
+      <button class="btn_submit {{checker ? '' : 'un' }}" bindtap="settlement">结算</button>
+    </view>
+    <view class="statements flex aic">
+      <view class="check_all flex aic">
+        <view class="btn {{allChecked ? 'checked' : ''}}" bindtap="checkAll"></view>
+        <text>全选</text>
+      </view>
+      <view class="full_cost">
+        <text>合计：￥{{result}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<template is="contact" />

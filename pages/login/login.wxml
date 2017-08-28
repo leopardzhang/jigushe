@@ -1,0 +1,86 @@
+<!--pages/login/login.wxml-->
+<import src="/components/tab_bar/tab_bar.wxml" />
+<import src="/components/picker/picker.wxml" />
+<view class="main">
+  <view class="content pb3">
+    <template is="tab_bar" data="{{data: tabBar, classIndex: classIndex}}" />
+    <view class="login_swiper">
+      <swiper class="index_wheel abs" indicator-dots="{{banner.indicatorDots}}" autoplay="{{banner.autoplay}}" duration="{{banner.duration}}" current="{{classIndex}}" bindchange="banner_swiper">
+        <swiper-item>
+          <scroll-view class="scroll_view abs" scroll-y>
+            <view class="content">
+              <view class="state_text tac">
+                <text>已经是吉古社会员？向左滑动去登录</text>
+              </view>
+              <view class="form_list tac">
+                <form bindsubmit="formSubmit">
+                  <view class="li">
+                    <view class="border_box">
+                      <picker class="select" bindchange="sexChoser" name="sex" value="{{sexIndex}}" range="{{sign.sex}}">
+                        <text>{{sexIndex.length == 0 ? '称谓' : sign.sex[sexIndex]}}</text>
+                      </picker>
+                    </view>
+                    <!-- <template is="picker" /> -->
+                  </view>
+                  <block wx:for="{{formList}}" wx:key="key">
+                    <view class="li">
+                      <view class="line_box">
+                        <input bindblur="inputComplete" name="{{item.name}}" value="{{item.val}}" data-id="{{item.id}}" data-index="{{index}}" type="{{item.type}}" placeholder="{{item.placeholder}}" />
+                      </view>
+                    </view>
+                  </block>
+                  <view class="li area">
+                    <view class="border_box {{wrong[index] == 0 ? 'red' : ''}}">
+                      <picker bindchange="regionChose" mode="region" name="address" value="{{addressList}}">
+                        <text>{{addressList.length == 0 ? '选择地区' : addressList[0]+'，'+addressList[1]+'，'+addressList[2]}}</text>
+                      </picker>
+                    </view>
+                  </view>
+                  <view class="agree">
+                    <label for="can">
+                    <checkbox-group  bindchange="addAble">
+                    <checkbox id="can" checked="{{agree}}" /><text>我同意《吉古社》为以下目的使用我的个人资料</text>
+                    </checkbox-group>
+                    </label>
+                  </view>
+                  <!-- <button class="btn_submit disable" disabled="{{!agree}}" form-type="submit">提交</button> -->
+                  <button class="btn_submit {{!submitAble ? 'disable' : ''}}" disabled="{{!submitAble}}" form-type="submit">提交</button>
+                </form>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <!-- ========================分割线======================== -->
+        <swiper-item>
+          <scroll-view class="scroll_view abs" scroll-y>
+            <view class="content">
+              <view class="state_text tac">
+                <text>绑定已有吉古社会员账户\n没有吉鼓社账户？请先注册绑定</text>
+              </view>
+              <view class="form_list bind_list tac">
+                <form>
+                  <view class="li area">
+                    <view class="line_box">
+                      <input bindblur="inputTel" type="number" placeholder="请输入手机号码" />
+                    </view>
+                  </view>
+                  <view class="li area">
+                    <view class="line_box flex between">
+                      <input type="number" bindinput="inputCode" placeholder="填写验证码" />
+                      <view class="getCode" bindtap="getCode">获取验证码
+                        <text hidden="{{!sended ? '1' : ''}}">{{second}}</text>
+                      </view>
+                    </view>
+                  </view>
+                  <view class="li area">
+                    <button class="btn_submit {{codeInputed && telInputed ? '' : 'disable'}}" bindtap="login">立即提交</button>
+                  </view>
+                </form>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>

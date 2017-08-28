@@ -1,0 +1,7 @@
+<template name="picker">
+  <view class="border_box {{wrong[index] == 0 ? 'red' : ''}}">
+    <picker mode="selector" data-id="{{data.id}}" data-index="{{index}}" class="select" bindchange="bindchange" range="{{range}}">
+      <text>{{chosed ? val[choseVal[index]] : data.normname}}</text>
+    </picker>
+  </view>
+</template>

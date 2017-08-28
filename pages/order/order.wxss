@@ -1,0 +1,148 @@
+/* pages/order/order.wxss */
+@import '/components/tab_bar/tab_bar.wxss';
+
+.content {
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+
+.index_wheel {
+  left: 0;
+  top: 48px;
+  right: 0;
+  bottom: 0;
+}
+
+.scroll_view {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/*------------------------------------*/
+
+.order_img {
+  width: 168rpx;
+  height: 168rpx;
+  margin-right: 20px;
+}
+
+.order_img image {
+  width: 168rpx;
+  height: 168rpx;
+  flex: 0 0 168rpx;
+}
+
+.order_list .li {
+  padding-top: 15px;
+}
+
+.order_info {
+  flex: 1;
+}
+
+.order_name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.order_text {
+  color: #000;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.order_cost {
+  color: #ef831b;
+}
+
+.order_num {
+  color: #9a9a9a;
+  width: 100%;
+  text-align: right;
+  padding-top: 10px;
+}
+
+.order_list .li .up {
+  padding-bottom: 18px;
+}
+
+@media ( min-resolution : 2dppx ) {
+  .order_list .border1px::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: scale(1, 0.5);
+  }
+}
+
+@media ( min-resolution : 3dppx ) {
+  .order_list .border1px::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: scale(1, 0.33);
+  }
+}
+
+.order_list .li .bottom {
+  padding: 12px 0 16px;
+}
+
+.order_list .li .bottom .info {
+  text-align: right;
+  padding-bottom: 12px;
+}
+
+.order_list .li .bottom .info text {
+  color: #ef831b;
+}
+
+.red {
+  color: #f00;
+}
+
+.btn_box .btn {
+  width: 68px;
+  height: 25px;
+  line-height: 25px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.btn_box .btn.pay {
+  background: #000;
+  color: #fff;
+  margin-left: 8px;
+}
+
+.state_text {
+  font-size: 18px;
+  color: #000;
+  padding: 30px 0 32px;
+}
+
+.btn_to_product {
+  background-color: #000 !important;
+  font-size: 18px;
+  border-radius: 0;
+  color: #fff !important;
+  font-weight: 700;
+  width: 538rpx;
+  height: 40px;
+  line-height: 40px;
+}
+.btn_box navigator{
+  margin-top: 64px;
+}
+
+.order_list .li:last-of-type .border1px:last-of-type::after{
+  display: none;
+}

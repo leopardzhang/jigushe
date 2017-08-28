@@ -1,0 +1,19 @@
+.border_box {
+  height: 50px;
+  border: 1px solid #000;
+  background: url('https://xcx.longcai666.com/xiaochengxu/api/images/arr_07.png') no-repeat center right;
+  background-size: 27rpx 15rpx;
+  background-position-x: 550rpx;
+  text-align: center;
+}
+
+.border_box .select, .border_box text {
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.border_box.red {
+  border: 1px solid #f00;
+}

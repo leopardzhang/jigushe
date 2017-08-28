@@ -1,0 +1,108 @@
+/* pages/product/product.wxss */
+@import '/components/picker/picker.wxss';
+
+.content {
+  padding-left: 56rpx;
+  padding-right: 56rpx;
+}
+
+.banner {
+  height: 698rpx;
+}
+
+.banner image {
+  width: 750rpx;
+  height: 698rpx;
+}
+
+.product_name {
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 9px;
+}
+
+.product_text {
+  padding-bottom: 12px;
+}
+
+.product_text text {
+  padding: 0 32rpx;
+}
+
+.product_info {
+  border-bottom: 8rpx solid #000;
+  padding-bottom: 3px;
+  padding-top: 12px;
+}
+
+.picker_box {
+  padding-top: 10px;
+}
+
+.picker_list .li {
+  padding-bottom: 11px;
+}
+
+.border_box.no_border {
+  border: none;
+  border-bottom: 1px solid #000;
+  height: auto;
+  background-position-y: 20px;
+}
+
+.tel_phone {
+  background: none;
+}
+
+.clause_box {
+  line-height: 2;
+  padding: 22px 0;
+}
+
+.clause text, .clause navigator {
+  color: #999;
+  margin: 0 17rpx;
+}
+
+.footer_box {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer_area {
+  height: 36px;
+}
+
+.footer_box {
+  height: 36px;
+  line-height: 36px;
+  background: #f2831a;
+}
+
+.price {
+  color: #fff;
+}
+
+.footer_list .li.price {
+  flex: 0 0 269rpx;
+  background: #000;
+  margin-right: 1px;
+}
+
+.footer_list .li.add_acrt {
+  flex: 0 0 229rpx;
+  background: #000;
+  color: #f2831a;
+}
+
+.footer_list .li.buy_now {
+  flex: 1;
+  color: #fff;
+}
+
+.description {
+  padding: 10px 40rpx;
+  line-height: 2;
+}

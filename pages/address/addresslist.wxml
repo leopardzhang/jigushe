@@ -1,0 +1,24 @@
+<!--pages/address/addresslist.wxml-->
+<view class="main">
+  <block wx:for="{{addresslist}}" wx:key="road_address">
+    <view class="address_item flex between aic">
+      <view class="inf_box" data-aid="{{item.aid}}" bindlongtap="setDefault">
+        <view class="flex between fz13">
+          <text>{{item.rec_name}} {{item.sex}}</text>
+          <text>{{item.telephone}}</text>
+        </view>
+        <view class="address">
+          <text class="default" hidden="{{item.zt == '1' ? false : true}}">【默认地址】</text>{{item.cur_address}} {{item.road_address}}
+        </view>
+      </view>
+      <view class="delete">
+        <text class="c999" data-aid="{{item.aid}}" bindtap="remove">删除</text>
+      </view>
+    </view>
+    <view class="border1px"></view>
+  </block>
+  <view class="set_default tac">———— 长按设为默认地址 ————</view>
+</view>
+<navigator url="/pages/address/address" class="new_address tac">
+  <text>添加新地址</text>
+</navigator>

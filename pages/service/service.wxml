@@ -1,0 +1,6 @@
+<!--pages/service/service.wxml-->
+<view class="main">
+  <rich-text nodes="{{text}}">
+    
+  </rich-text>
+</view>

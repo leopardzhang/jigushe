@@ -1,0 +1,21 @@
+<template name="reload">
+  <view class="ng-scope flex aic center" hidden="{{reload ? 0 : 1}}">
+    <view style="width:100%;height:100%" class="lds-ellipsis">
+      <view>
+        <view></view>
+      </view>
+      <view>
+        <view></view>
+      </view>
+      <view>
+        <view></view>
+      </view>
+      <view>
+        <view></view>
+      </view>
+      <view>
+        <view></view>
+      </view>
+    </view>
+  </view>
+</template>

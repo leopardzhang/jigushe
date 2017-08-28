@@ -1,0 +1,114 @@
+/* pages/product/productlist.wxss */
+
+.content {
+  padding-left: 75rpx;
+  padding-right: 75rpx;
+}
+
+.quantity {
+  font-size: 16px;
+  line-height: 45px;
+}
+
+.product_list .li {
+  margin-bottom: 25px;
+}
+
+.product_list .li .img_box {
+  width: 290rpx;
+  height: 290rpx;
+  display: flex;
+}
+
+.product_list .li .img_box image {
+  width: 240rpx;
+  margin: auto;
+}
+
+.product_list .li .product_name {
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 8px;
+}
+
+.product_list .li .product_cost {
+  color: #ef831b;
+  padding-top: 9px;
+}
+
+/*page*/
+
+.page_area, .page {
+  height: 36px;
+}
+
+.page_box {
+  height: 36px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.page_box .page {
+  padding: 0 36rpx;
+}
+
+@media ( min-resolution : 2dppx ) {
+  .page_box.border1px::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #e1e1e1;
+    transform: scale(1, 0.5);
+  }
+}
+
+@media ( min-resolution : 3dppx ) {
+  .page_box.border1px::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #e1e1e1;
+    transform: scale(1, 0.33);
+  }
+}
+
+.page_btn {
+  width: 9px;
+  height: 16px;
+  background: url('https://xcx.longcai666.com/xiaochengxu/api/images/arr.png') no-repeat;
+  background-size: 100% auto;
+}
+
+.left_arr {
+  transform: rotate(180deg);
+}
+
+.page_list {
+  width: 342rpx;
+  height: 36px;
+  line-height: 36px;
+}
+
+.page_list .page_code {
+  padding: 0 30rpx;
+}
+
+.page_list .page_code.active {
+  font-size: 15px;
+  color: #000;
+}
+
+.no_data{
+  background: url('https://xcx.longcai666.com/xiaochengxu/api/images/zw_03.jpg') no-repeat center center #f0f0f0;
+  background-size: 116rpx auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}

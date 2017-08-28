@@ -1,0 +1,42 @@
+<!--pages/product/productlist.wxml-->
+<import src="/components/contact/contact.wxml" />
+<import src="/components/loading/loading.wxml" />
+<import src="/components/reload/reload.wxml" />
+<view class="main {{havaData ? '' : 'no_data'}}">
+  <view class="content">
+    <view class="quantity tac" wx:if="{{havaData}}">
+      <text>产品总数：{{total}}</text>
+    </view>
+    <view class="product_list flex between wrap">
+      <block wx:for="{{productList}}" wx:key="id">
+        <view class="li">
+          <navigator url="/pages/product/product?id={{item.id}}&page={{item.retitle}}">
+            <view class="img_box">
+              <image mode="widthFix" src="{{item.img}}" bindload="imgLoad" />
+            </view>
+            <view class="product_info_box tac">
+              <view class="product_name">{{item.retitle}}</view>
+              <view class="product_text">{{item.title}}</view>
+              <view class="product_cost">￥{{item.old_price}}</view>
+            </view>
+          </navigator>
+        </view>
+      </block>
+    </view>
+    <template is="reload" data="{{reload: reload}}" />
+  </view>
+</view>
+<!-- <view class="page_area"></view>
+<view class="page_box border1px">
+  <view class="page flex aic between">
+    <view class="left_arr page_btn"></view>
+    <view class="page_list flex center">
+      <block wx:for="{{pageList}}" wx:key="id" wx:for-index="idx">
+        <view class="page_code {{currentPage == idx + 1 ? 'active' : ''}}" bindtap="changePage" data-id="{{item}}">{{item}}</view>
+      </block>
+    </view>
+    <view class="right_arr page_btn"></view>
+  </view>
+</view> -->
+<template is="contact" />
+<template is="loading" data="{{loading: loading}}" />

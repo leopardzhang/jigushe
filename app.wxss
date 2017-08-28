@@ -1,0 +1,57 @@
+@import 'components/loading/loading.wxss';
+@import 'components/reload/reload.wxss';
+/**app.wxss**/
+.container{color:#000;font-size: 32rpx;}
+image{vertical-align: middle;}
+.w100{width:100%;}
+/**公用类**/
+.clear::after{ clear:both; overflow:hidden; height:0;}
+.fl{ float:left;}
+.fr{ float:right;}
+.abs{ position:absolute;}
+.rel{ position:relative;}
+.content{ padding-left: 15rpx; padding-right: 15rpx;}
+.em{text-indent: 2em;}
+.tac{text-align: center;}
+.blod{font-weight: 700;}
+.flex{display: flex;}
+.box{-webkit-box-sizing: border-box; box-sizing: border-box;}
+.wrap{ flex-wrap: wrap;}
+.aic{ align-items: center;}
+.column{ flex-direction: column;}
+.around{justify-content: space-around;}
+.between{justify-content: space-between;}
+.center{justify-content: center;}
+/*初始化*/
+page{font-family: "微软雅黑"}
+swiper{ height: auto}
+.navigator-hover{ background: transparent; opacity: 1;}
+.swiper-item{
+   overflow: auto !important;
+}
+/**公用类**/
+/*客服按钮*/
+page{
+  font-size: 12px;
+}
+.contact{
+   width: 35px;
+   height: 35px;
+   line-height: 35px;
+   background: rgba(0, 0, 0, .5);
+   border-radius: 50%;
+   position: fixed;
+   right: 70rpx;
+   bottom: 90rpx;
+   z-index: 10;
+   font-size: 12px;
+   color: #fff;
+   padding: 0;
+}
+.contact.opcity{
+  opacity: 0;
+}
+.main{
+  width: 100%;
+  overflow-x: hidden;
+}

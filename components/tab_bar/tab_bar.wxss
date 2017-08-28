@@ -1,0 +1,58 @@
+.pb3 {
+  padding-bottom: 3px;
+}
+
+.tab_bar {
+  height: 43px;
+  line-height: 43px;
+}
+
+.tab_bar .tab {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+}
+
+.tab_bar .tab:nth-child(1)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  left: 100%;
+  bottom: -1px;
+  transition: 0.1s ease-in-out;
+}
+
+.tab_bar .tab.active:nth-child(1)::after {
+  left: 0;
+}
+
+.tab_bar::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@media ( min-resolution : 2dppx ) {
+  .tab_bar::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: scale(1, 0.5);
+  }
+}
+
+@media ( min-resolution : 3dppx ) {
+  .tab_bar::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    transform: scale(1, 0.33);
+  }
+}

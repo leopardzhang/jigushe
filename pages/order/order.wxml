@@ -1,0 +1,128 @@
+<!--pages/order/order.wxml-->
+<import src="/components/tab_bar/tab_bar.wxml" />
+<view class="main">
+  <view class="content pb3">
+    <template is="tab_bar" data="{{data: tabBar, classIndex: classIndex}}" />
+    <view class="order_swiper">
+      <swiper class="index_wheel abs" indicator-dots="{{banner.indicatorDots}}" autoplay="{{banner.autoplay}}" duration="{{banner.duration}}" current="{{classIndex}}" bindchange="banner_swiper">
+        <swiper-item>
+          <scroll-view class="scroll_view abs" scroll-y>
+            <view class="content">
+              <view class="empty" wx:if="{{!orderList}}">
+                <view class="state_text tac">
+                  <text>还没有订单哦~</text>
+                  <view class="btn_box flex aic center">
+                    <navigator url="/pages/index/index" open-type="switchTab" class="btn_to_product">去购物</navigator>
+                  </view>
+                </view>
+              </view>
+              <view class="order_list" wx:if="{{orderList}}">
+                <block wx:for="{{orderList}}" wx:for-item="order" wx:key="id">
+                  <view class="li">
+                    <view class="border1px">
+                      <navigator url="/pages/order/orderinfo?id={{order.id}}">
+                        <block wx:for="{{order.list}}" wx:key="gtitle">
+                          <view class="flex up">
+                            <view class="order_img">
+                              <image src="{{item.gpicurls}}" />
+                            </view>
+                            <view class="order_info">
+                              <view class="flex between">
+                                <view class="flex between aic f1">
+                                  <view class="flex column">
+                                    <text class="order_name">{{item.gtitle}}</text>
+                                    <text class="order_text">{{item.attrname}}</text>
+                                  </view>
+                                  <text class="order_cost">￥{{item.price}}</text>
+                                </view>
+                              </view>
+                              <view class="order_num">
+                                <text>X{{item.num}}</text>
+                              </view>
+                            </view>
+                          </view>
+                        </block>
+                      </navigator>
+                    </view>
+                    <view class="border1px">
+                      <view class="bottom">
+                        <view class="info">
+                          共{{order.list.length}}件商品，合计：<text>￥{{order.zjprice}}元</text>
+                        </view>
+                        <view class="flex between aic">
+                          <text class="red">{{order.checkinfo}}</text>
+                          <view class="btn_box flex between">
+                            <view data-id="{{order.id}}" class="delete btn" bindtap="remove">删除订单</view>
+                            <view data-num="{{order.orderlistnum}}" class="pay btn" bindtap="pay">付款</view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+        <swiper-item>
+          <scroll-view class="scroll_view abs" scroll-y>
+            <view class="content">
+              <view class="empty" wx:if="{{!orderList2}}">
+                <view class="state_text tac">
+                  <text>还没有订单哦~</text>
+                  <view class="btn_box flex aic center">
+                    <navigator url="/pages/index/index" open-type="switchTab" class="btn_to_product">去购物</navigator>
+                  </view>
+                </view>
+              </view>
+              <view class="order_list" wx:if="{{orderList2}}">
+                <block wx:for="{{orderList2}}" wx:for-item="order" wx:key="key">
+                  <view class="li">
+                    <view class="border1px">
+                      <navigator url="/pages/order/orderinfo?id={{order.id}}">
+                        <block wx:for="{{order.list}}" wx:key="gtitle">
+                          <view class="flex up">
+                            <view class="order_img">
+                              <image src="{{item.gpicurls}}" />
+                            </view>
+                            <view class="order_info">
+                              <view class="flex between">
+                                <view class="flex between aic f1">
+                                  <view class="flex column">
+                                    <text class="order_name">{{item.gtitle}}</text>
+                                    <text class="order_text">{{item.attrname}}</text>
+                                  </view>
+                                  <text class="order_cost">￥{{item.price}}</text>
+                                </view>
+                              </view>
+                              <view class="order_num">
+                                <text>X{{item.num}}</text>
+                              </view>
+                            </view>
+                          </view>
+                        </block>
+                      </navigator>
+                    </view>
+                    <view class="border1px">
+                      <view class="bottom">
+                        <view class="info">
+                          共{{order.list.length}}件商品，合计：<text>￥{{order.zjprice}}元</text>
+                        </view>
+                        <view class="flex between aic">
+                          <text class="red">{{order.checkinfo}}</text>
+                          <view class="btn_box flex between">
+                            <view data-id="{{order.id}}" class="pay btn" bindtap="confirm">确认收货</view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </view>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>

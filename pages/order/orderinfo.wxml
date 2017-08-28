@@ -1,0 +1,17 @@
+<!--pages/order/orderinfo.wxml-->
+<import src="/components/order/orderlist.wxml" />
+<import src="/components/address/address.wxml" />
+<view class="main">
+  <view class="block">
+    <view class="flex between logistics">
+      <text class="blod label">物流信息</text>
+      <view class="flex column f1">
+        <view wx:if="{{info.peisong}}">配送：{{info.peisong}}</view>
+        <view wx:if="{{info.yundannum}}">运单号：{{info.yundannum}}</view>
+        <view>订单状态：{{info.wuliu.checkinfo}}</view>
+      </view>
+    </view>
+  </view>
+  <template is="address" data="{{address: info.dingdan}}" />
+  <template is="orderlist" data="{{shopList: info.list}}" />
+</view>

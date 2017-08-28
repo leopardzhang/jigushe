@@ -1,0 +1,11 @@
+<template name="tab_bar">
+  <view class="tab_bar rel">
+    <view class="tab_bar_list flex">
+      <block wx:for="{{data}}" wx:key="key">
+        <view class="tab bold rel {{classIndex == item.id ? 'active' : ''}}" data-id="{{item.id}}" bindtap="tabChange">
+          <text>{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</template>

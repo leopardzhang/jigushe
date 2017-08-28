@@ -1,0 +1,70 @@
+/* pages/address/address.wxss */
+
+.content {
+  padding: 0 55rpx;
+}
+
+.address_border_top {
+  background: #dedede;
+  height: 10px;
+}
+
+.main {
+  background: #fff;
+}
+
+.address_info_list .li {
+  padding: 12px 0;
+  font-size: 14px;
+}
+
+.address_info_list .li .arrow {
+  flex: 0 0 1em;
+}
+
+.address_info_list .li .label_name {
+  font-weight: 700;
+  color: #000;
+  flex: 0 0 5em;
+}
+
+.input_box {
+  flex: 1;
+  margin-left: 44rpx;
+}
+
+.address_info_list .li .input_box picker,
+.address_info_list .li .input_box input {
+  min-height: 1.4rem;
+  line-height: 1.4rem;
+  color: #818181;
+}
+
+.pt34 {
+  padding-top: 34px;
+}
+
+.btn_submit {
+  background-color: #ef8517 !important;
+  color: #fff !important;
+  border-radius: 0;
+}
+
+.submite_box {
+  padding: 14px 0 27px;
+}
+
+input.warning {
+  outline: 1px solid #f00;
+  box-shadow: 0 0 3px #f00;
+}
+
+.btn_submit.disable{
+  opacity: .5;
+}
+.btn_submit.reset{
+  background: #fff !important;
+  color: #111 !important;
+  margin-top: 10px;
+  border: 1px solid #ccc !important;
+}

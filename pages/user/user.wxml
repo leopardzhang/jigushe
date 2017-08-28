@@ -1,0 +1,23 @@
+<!--pages/user/user.wxml-->
+<import src="/components/contact/contact.wxml" />
+<view class="main">
+  <view class="header flex">
+    <image src="https://xcx.longcai666.com/xiaochengxu/api/images/logo.jpg" mode="aspectFit" class="logo" />
+  </view>
+  <view class="user_box">
+    <view class="user_list">
+      <block wx:for="{{list}}" wx:key="url">
+        <navigator url="{{item.url}}">
+          <view class="li flex aic between">
+            <view class="flex aic">
+              <image src="{{item.img}}" class="icon" />
+              <text>{{item.text}}</text>
+            </view>
+            <image src="https://xcx.longcai666.com/xiaochengxu/api/images/arr_06.jpg" class="arrow" />
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+</view>
+<template is="contact" />

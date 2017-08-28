@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/address/addresslist",
+    "pages/address/address",
+    "pages/login/login",
+    "pages/order/order",
+    "pages/order/orderinfo",
+    "pages/pay/pay",
+    "pages/cart/cart",
+    "pages/product/product",
+    "pages/product/productlist",
+    "pages/user/user",
+    "pages/service/service",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "吉古社",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#fff",
+    "backgroundColor": "#000",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "icon/icon00.png",
+        "selectedIconPath": "icon/icon00.png",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "icon/icon10.png",
+        "selectedIconPath": "icon/icon10.png",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "icon/icon20.png",
+        "selectedIconPath": "icon/icon20.png",
+        "text": ""
+      }
+    ]
+  },
+  "debug": false
+}

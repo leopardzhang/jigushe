@@ -1,0 +1,72 @@
+<!--pages/product/product.wxml-->
+<import src="/components/contact/contact.wxml" />
+<import src="/components/picker/picker.wxml" />
+<import src="/components/loading/loading.wxml" />
+<view class="main">
+  <swiper class="banner" circular="{{banner.circular}}" indicator-dots="{{banner.indicatorDots}}" autoplay="{{banner.autoplay}}" interval="{{banner.interval}}" duration="{{banner.duration}}">
+    <block wx:for="{{data.imglist}}" wx:key="imglist">
+      <swiper-item>
+        <image mode="widthFix" src="{{item.img}}" class="slide_image" bindload="imgLoad" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="content">
+    <view class="product_info tac">
+      <view class="product_name">{{data.retitle}}</view>
+      <view class="product_text">{{data.title}}</view>
+      <view class="product_text">
+        <text>产品编号：{{data.id}}</text>
+        <text wx:if="{{data.tot_housenum}}">库存：{{data.tot_housenum}}</text>
+      </view>
+    </view>
+    <view class="picker_box">
+      <view class="picker_list">
+        <block wx:for="{{rangeList}}" wx:key="id" wx:for-index="idx">
+          <view class="li">
+            <template is="picker" data="{{data: item, name: item.id,  range: item.attrnamelist, index: idx, val: item.attrnamelist, chosed: chosed[idx], num: num[idx], choseVal: choseVal,wrong: wrong }}" />
+          </view>
+        </block>
+        <view class="li">
+          <view bindtap="changeShow" class="border_box no_border border_bottom">
+            <text>产品描述</text>
+            <view class="description" hidden="{{descriptionShow}}">
+              {{data.content}}
+            </view>
+          </view>
+        </view>
+        <view class="li" wx:if="{{data.tel}}">
+          <view class="border_box tel_phone" bindtap="makehPhoneCall" data-tel="{{data.tel}}">
+            <text>致电咨询</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="clause_box">
+      <view class="clause flex center">
+        <navigator url="/pages/service/service?type=fuwutk">服务条款</navigator>
+        <text>|</text>
+        <navigator url="/pages/service/service?type=yinsitk">隐私条款</navigator>
+      </view>
+      <view class="clause">
+        <text>©2017山西千尚久川贸易有限公司</text>
+        <text>晋ICP备1234567号</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="footer_area"></view>
+<view class="footer_box">
+  <view class="footer_list flex tac">
+    <view class="li price">
+      <text>{{data.price ? '￥'+data.price : '￥'+data.salesprice}}</text>
+    </view>
+    <view class="li add_acrt" bindtap="addTocart">
+      <text>加入购物车</text>
+    </view>
+    <view class="li buy_now" bindtap="buy">
+      <text>立即购买</text>
+    </view>
+  </view>
+</view>
+<template is="contact" />
+<template is="loading" data="{{loading: loading}}" />

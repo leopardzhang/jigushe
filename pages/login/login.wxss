@@ -1,0 +1,82 @@
+/* pages/login/login.wxss */
+@import '/components/tab_bar/tab_bar.wxss';
+@import '/components/picker/picker.wxss';
+.content {
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+
+.state_text {
+  font-size: 18px;
+  color: #000;
+  padding: 30px 0 32px;
+}
+
+.index_wheel {
+  left: 0;
+  top: 48px;
+  right: 0;
+  bottom: 0;
+}
+
+.scroll_view {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.line_box {
+  border-bottom: 1px solid #000;
+}
+
+.line_box input {
+  height: 39px;
+  line-height: 39px;
+  font-size: 18px;
+}
+.form_list{
+  padding-bottom: 58px;
+}
+.form_list .li.area {
+  padding-top: 12px;
+}
+
+.agree {
+  font-size: 18px;
+  padding: 23px 0;
+}
+
+.agree checkbox {
+  transform: scale(0.8);
+}
+
+.btn_submit {
+  background-color: #000 !important;
+  font-size: 18px;
+  border-radius: 0;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+.btn_submit.disable {
+  background: transparent !important;
+  color: #ccc !important;
+  font-weight: 500 !important;
+}
+.bind_list .li{
+  padding-top: 20px !important;
+  height: 42px;
+}
+.bind_list .li input{
+  height: 42px;
+  line-height: 42px;
+}
+.getCode{
+  font-size: 14px;
+  width: 254rpx;
+  height: 42px;
+  line-height: 42px;
+  background: #9a9a9a;
+  color: #fff;
+}

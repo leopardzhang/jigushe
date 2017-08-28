@@ -1,0 +1,33 @@
+/* pages/user/user.wxss */
+page{
+  background: #dedede;
+}
+.header{
+  height: 102px;
+  background: #040001;
+}
+.header .logo{
+  width: 384rpx;
+  height: 109rpx;
+  margin: auto;
+}
+.user_box{
+  margin: 11px 30rpx 0;
+}
+.user_list .li{
+  background: #fff;
+  line-height: 34px;
+  height: 34px;
+  margin-bottom: 1px;
+  padding: 0 34rpx;
+  font-size: 14px;
+}
+.user_list .li .icon{
+  width: 31rpx;
+  height: 44rpx;
+  margin-right: 24rpx;
+}
+.arrow{
+  width: 15rpx;
+  height: 26rpx;
+}
