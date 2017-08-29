@@ -17,7 +17,6 @@ Page({
         data: { info: cartData, userid: app.globalData.userId },
         method: "GET",
         success(res) {
-          console.log(res);
           if (res.data.dizhi.zt == 0) {
             wx.navigateTo({
               url: '/pages/address/address'

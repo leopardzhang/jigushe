@@ -33,7 +33,17 @@ Page({
     this.reload();
   },
   onHide() { //离开页面
-
+    console.log(this.data.shoplist);
+    let checkList = [];
+    for (let i = 0; i < this.data.checkList.length; i++) {
+      checkList.push(false);
+    }
+    this.setData({
+      checkList,
+      allChecked: false,
+      checker: false,
+      result: 0
+    })
   },
   reload() {
     let _this = this;
