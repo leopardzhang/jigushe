@@ -29,19 +29,19 @@
       {
         "pagePath": "pages/index/index",
         "iconPath": "icon/icon00.png",
-        "selectedIconPath": "icon/icon00.png",
+        "selectedIconPath": "icon/icon01.png",
         "text": ""
       },
       {
         "pagePath": "pages/cart/cart",
         "iconPath": "icon/icon10.png",
-        "selectedIconPath": "icon/icon10.png",
+        "selectedIconPath": "icon/icon11.png",
         "text": ""
       },
       {
         "pagePath": "pages/user/user",
         "iconPath": "icon/icon20.png",
-        "selectedIconPath": "icon/icon20.png",
+        "selectedIconPath": "icon/icon21.png",
         "text": ""
       }
     ]
