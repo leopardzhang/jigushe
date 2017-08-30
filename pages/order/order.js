@@ -82,7 +82,25 @@ Page({
             data: { act: 'queren', id: e.target.dataset.id, userid: app.globalData.userId },
             success(res) {
               if (res.data.success == '1') {    //确认收货了
-                
+                wx.request({
+                  url: `${app.globalData.url}memberorder.php`,
+                  data: { act: 'queren', userid: app.globalData.userId, id: e.target.dataset.id },
+                  success(res) {
+                    if (res.data.success == 1) {
+                      wx.showToast({
+                        title: '收货成功',
+                        icon: 'success',
+                        duration: 2000
+                      })
+                    } else {
+                      wx.showToast({
+                        title: '收货失败',
+                        image: '/icon/w.png',
+                        duration: 2000
+                      })
+                    }
+                  }
+                })
               }
             }
           })
