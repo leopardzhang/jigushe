@@ -54,7 +54,7 @@
                 <view class="brands_list">
                   <block wx:for="{{brands.list}}" wx:key="id">
                     <view class="brand" data-id="{{item.id}}">
-                      <navigator url="/pages/product/productlist?id={{item.id}}&page={{item.text}}">
+                      <navigator url="/pages/product/productlist?id={{item.id}}&page={{item.text}}&pinpai=1">
                         <view class="content">{{item.text}} </view>
                       </navigator>
                     </view>

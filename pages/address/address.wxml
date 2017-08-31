@@ -34,7 +34,7 @@
             <text>选择地区</text>
           </view>
           <view class="input_box">
-            <picker name="region" value="{{region[0]}}，{{region[1]}}，{{region[2]}}" data-id="4" mode="region" class="select" bindchange="bindRegionChange" region="{{region}}">
+            <picker name="region" value="{{[region[0],region[1],region[2]]}}" data-id="4" mode="region" class="select" bindchange="bindRegionChange" region="{{region}}">
               {{region[0]}}，{{region[1]}}，{{region[2]}}
             </picker>
           </view>

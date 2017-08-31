@@ -52,7 +52,7 @@
                         <view class="flex between aic">
                           <text class="red">{{order.checkinfo}}</text>
                           <view class="btn_box flex between">
-                            <view data-id="{{order.id}}" class="delete btn" bindtap="remove">删除订单</view>
+                            <view data-id="{{order.id}}" data-index="{{index}}" class="delete btn" bindtap="remove">删除订单</view>
                             <view data-num="{{order.orderlistnum}}" class="pay btn" bindtap="pay">付款</view>
                           </view>
                         </view>

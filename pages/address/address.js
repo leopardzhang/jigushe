@@ -111,6 +111,7 @@ Page({
     util.checkValue.call(this);
   },
   bindRegionChange(e) {
+    console.log(e);
     var warning = this.data.warning;
     var warnList = this.data.warnList;
     warning[e.target.dataset.id] = 1
@@ -119,8 +120,10 @@ Page({
       region: e.detail.value
     })
     util.checkValue.call(this);
+    console.log(this.data.region);
   },
   formSubmit(e) {
+    console.log(e);
     wx.request({
       url: `${app.globalData.url}orderinfo.php`,
       data: { data: e.detail.value, act: 'addr', userid: app.globalData.userId },

@@ -16,7 +16,7 @@
                 <text>￥{{item.total}}</text>
               </view>
               <view class="num">
-                <text>{{item.num}}</text>
+                <text>× {{item.num}}</text>
               </view>
             </view>
           </view>

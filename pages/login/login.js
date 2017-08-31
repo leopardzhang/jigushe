@@ -56,36 +56,138 @@ Page({
     }, 200);
   },
   inputComplete(e) {
+    let _this = this;
     let submitList = this.data.submitList;
     let idx = parseInt(e.target.dataset.index);
     var index = '';
-    if (e.detail.value != '') {
-      submitList[idx + 1] = 1;
-      index = e.target.dataset.index;
-      this.setData({
-        submitList
-      })
-    } else {
-      submitList[idx + 1] = 0;
-      index = e.target.dataset.index;
-      this.setData({
-        submitList
-      })
-    }
-    let formList = this.data.formList;
-    formList[index].val = e.detail.value;
-    this.setData({
-      autoFocusIndex: ++e.target.dataset.id,
-    })
-    this.checkable();
-    //console.log(this.data.autoFocusIndex) 聚焦的索引
-  },
+    let telReg = /^1[34578]\d{9}$/;
+    let emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+    switch (idx) {
+      case 0:
+        if (e.detail.value != '') {
+          submitList[idx + 1] = 1;
+          _this.setData({
+            submitList
+          })
+        } else {
+          submitList[idx + 1] = 0;
+          _this.setData({
+            submitList
+          })
+        }
+        break;
+      case 1:
+        if (e.detail.value != '') {
+          submitList[idx + 1] = 1;
+          _this.setData({
+            submitList
+          })
+        } else {
+          submitList[idx + 1] = 0;
+          _this.setData({
+            submitList
+          })
+        }
+        break;
+      case 2:
+        if (e.detail.value != '' && telReg.test(e.detail.value)) {
+          submitList[idx + 1] = 1;
+          _this.setData({
+            submitList
+          })
+          console.log(_this.data.submitList)
+        } else {
+          wx.showToast({
+            title: '手机号码格式不正确',
+            image: '/icon/w.png',
+            duration: 2000,
+            complete() {
+              //关闭
+            }
+          })
+          submitList[idx + 1] = 0;
+          _this.setData({
+            submitList
+          })
+        }
+        break;
+      case 3:
+        if (e.detail.value != '' && emailReg.test(e.detail.value)) {
+          submitList[idx + 1] = 1;
+          _this.setData({
+            submitList
+          })
+        } else {
+          wx.showToast({
+              title: '邮箱格式不正确',
+              image: '/icon/w.png',
+              duration: 2000,
+              complete() {
+                //关闭
+              }
+            })
+            submitList[idx + 1] = 0;
+            _this.setData({
+              submitList
+            })
+          }
+        break;
+        }
+        index = e.target.dataset.index;
+        // if (e.detail.value != '') {
+        //   submitList[idx + 1] = 1;
+        //   if (idx == 2 && telReg.test(e.detail.value)) {
+        //     submitList[idx + 1] = 1;
+        //   } else{
+        //     wx.showToast({
+        //       title: '手机号码格式不正确',
+        //       image: '/icon/w.png',
+        //       duration: 2000,
+        //       complete() {
+        //         //关闭
+        //       }
+        //     })
+        //     submitList[idx + 1] = 0;
+        //   }
+        //   if (idx == 3 && emailReg.test(e.detail.value)) {
+        //     submitList[idx + 1] = 1;
+        //   } else {
+        //     wx.showToast({
+        //       title: '邮箱格式不正确',
+        //       image: '/icon/w.png',
+        //       duration: 2000,
+        //       complete() {
+        //         //关闭
+        //       }
+        //     })
+        //     submitList[idx + 1] = 0;
+        //   }
+        //   index = e.target.dataset.index;
+        //   this.setData({
+        //     submitList
+        //   })
+        // } else {
+        //   submitList[idx + 1] = 0;
+        //   index = e.target.dataset.index;
+        //   this.setData({
+        //     submitList
+        //   })
+        // }
+        let formList = this.data.formList;
+        formList[index].val = e.detail.value;
+        this.setData({
+          autoFocusIndex: ++e.target.dataset.id,
+        })
+        this.checkable();
+      //console.log(this.data.autoFocusIndex) 聚焦的索引
+    },
   banner_swiper(e) {
     this.setData({
       classIndex: e.detail.current
     })
   },
   regionChose(e) {
+    /* */
     let addressList = e.detail.value;
     let submitList = this.data.submitList;
     submitList[5] = 1;
@@ -103,16 +205,7 @@ Page({
       method: 'GET',
       success(res) {
         console.log(res);
-        if (res.data == '-1') {
-          wx.showToast({
-            title: '该手机号已注册',
-            image: '/icon/w.png',
-            duration: 2000,
-            complete() {
-              //关闭
-            }
-          })
-        } else {
+        if (res.data == '1') {
           wx.showToast({
             title: '注册成功',
             icon: 'success',
@@ -126,6 +219,16 @@ Page({
               classIndex: 1
             })
           }, 2000)
+
+        } else {
+          wx.showToast({
+            title: `${res.data}`,
+            image: '/icon/w.png',
+            duration: 2000,
+            complete() {
+              //关闭
+            }
+          })
         }
       },
       fail(res) {
@@ -134,11 +237,13 @@ Page({
     })
   },
   login() {
+    let _this = this;
     wx.request({
       url: `${app.globalData.url}login.php`,
-      data: { mobile: '13674637162' },
+      data: { mobile: `${_this.data.tel}` },
       method: 'GET',
       success(res) {
+        console.log(res);
         if (res.data.userid) {
           app.globalData.userId = res.data.userid;
           wx.navigateBack({ delta: 1 });

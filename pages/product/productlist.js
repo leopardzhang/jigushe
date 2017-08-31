@@ -18,7 +18,7 @@ Page({
     });
     wx.request({
       url: `${app.globalData.url}products_list.php`,
-      data: { typeid: options.id },
+      data: { typeid: options.id, pinpai: options.pinpai  },
       method: 'GET',
       success(res) {
         if (res.data != '') {

@@ -9,7 +9,7 @@ Page({
     ],
     classIndex: 0
   },
-  onLoad: function (options) {
+  onLoad (options) {
     let _this = this;
     wx.request({
       url: `${app.globalData.url}memberorder.php`,
@@ -47,6 +47,7 @@ Page({
   },
   remove(e) {
     let _this = this;
+    console.log(e);
     wx.showModal({
       title: '确认删除？',
       success: function (res) {
@@ -55,6 +56,11 @@ Page({
             url: `${app.globalData.url}memberorder.php`,
             data: { act: 'del', userid: app.globalData.userId, id: e.target.dataset.id },
             success(res) {
+              let orderList = _this.data.orderList;
+              orderList.splice(e.target.dataset.index, 1);
+              _this.setData({
+                orderList
+              })
               _this.onLoad();
             }
           })
